@@ -84,4 +84,11 @@ main section.products-show {
   }
 }
 
+main section.products-show {
 
+  .product-detail {
+    img.main-img {
+      max-width: 100%;
+    }
+  }
+}
