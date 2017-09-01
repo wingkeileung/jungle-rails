@@ -1,0 +1,22 @@
+<h1>UserMailer#order_confirmation</h1>
+
+<p>
+  <div>
+        <% totalOrderPrice = 0 %>
+        <% @order.line_items.each do |item| %>
+            <dt>Total Price </dt>
+            <%= item.total_price_cents%>
+            <dt>Product Name</dt>
+            <%= item.product.name%>
+            <dt>Product Description</dt>
+            <%= item.product.description%>
+            <dt>Product Quantity </dt>
+            <%= item.quantity%>
+            <dt>Product Description</dt>
+            <%= item.product.description%>
+            <%= image_tag item.product.image.url, class: 'order_img' %>
+            <% totalOrderPrice += item.total_price_cents %>
+        <% end %>
+        Good Bye!
+    </div>
+</p>
