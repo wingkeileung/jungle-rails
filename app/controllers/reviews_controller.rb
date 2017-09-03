@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+before_action :require_login
 
   def create
   @product = Product.find(params[:product_id])
@@ -33,4 +33,9 @@ def destroy
     )
   end
 
+  def require_login
+    unless current_user
+      redirect_to login_path
+    end
+  end
 end

@@ -40,14 +40,15 @@
             <table>
               <tr>
                 <th>User ratings</th>
-                <th>User comments on this product</th>
+                <th>User reviews/comments on this product</th>
               </tr>
-              <% @product.reviews.each do |review| %>
-              <tr>
-                <td class="rating"><%= review.rating %></td>
+                <% @product.reviews.each do |review| %>
+              <tr><td class="rating"><%= review.rating %></td>
                 <td class="description"><%= review.description %></td>
-                  <% if @review_user == current_user %>
-                    <td class="deleteButton"><%= link_to 'delete', product_review_path(@product, review), method: :delete %></td>
+                  <% if current_user %>
+                    <% if review.user_id == current_user.id %>
+                      <td class="deleteButton"><%= link_to 'delete review', product_review_path(@product, review), method: :delete %></td>
+                    <% end %>
                   <% end %>
                 <% end %>
               </tr>
