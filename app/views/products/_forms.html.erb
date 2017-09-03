@@ -1,0 +1,4 @@
+<%= form_for ([@product, Review.new]) do |f| %>
+<div class="comments"><dt>Review Comments: <%= f.text_field :description %></dt></div>
+<div class="ratings"><dt>Rating : <%= f.select :rating, 1..5 %><%= f.submit "Submit" %></dt></div>
+<% end %>

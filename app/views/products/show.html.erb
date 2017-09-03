@@ -5,6 +5,10 @@
   </header>
 
   <article class="product-detail">
+    <p id="notice"><% if flash[:notice] %></p>
+    <div class="alert alert-info" role="alert">
+    <%= flash[:notice]%></div>
+    <% end %>
 
     <div class="row">
 
@@ -24,6 +28,37 @@
           <dd><%= @product.price %></dd>
         </dl>
       </div>
+
+      <div class="product">
+        <% if current_user %>
+        <%= render 'forms' %>
+        <% end %>
+      </div>
+
+
+        <div>
+            <table>
+              <tr>
+                <th>User ratings</th>
+                <th>User comments on this product</th>
+              </tr>
+              <% @product.reviews.each do |review| %>
+              <tr>
+                <td class="rating"><%= review.rating %></td>
+                <td class="description"><%= review.description %></td>
+                  <% if @review_user == current_user %>
+                    <td class="deleteButton"><%= link_to 'delete', product_review_path(@product, review), method: :delete %></td>
+                  <% end %>
+                <% end %>
+              </tr>
+            </table>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+      </div>
+
     </div>
 
   </article>
