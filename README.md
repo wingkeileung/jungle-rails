@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example. Finished this first ever Rails project within a week. Fully function with email 
 
 
 ## Setup
@@ -14,6 +14,10 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 7. Sign up for a Stripe account
 8. Put Stripe (test) keys into appropriate .env vars
 9. Run `bin/rails s -b 0.0.0.0` to start the server
+
+## Screenshots
+!["Example screenshot of the product page along with description"](https://github.com/wingkeileung/jungle-rails/blob/master/images/productDescription.png)
+!["Example screenshot of the shopping cart"](https://github.com/wingkeileung/jungle-rails/blob/master/images/shoppingCart.png)
 
 ## Stripe Testing
 
