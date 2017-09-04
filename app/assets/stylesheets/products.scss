@@ -75,6 +75,10 @@ main section.categories-show {
   }
 }
 
+ul.nav.navbar-nav {
+  line-height: 50px;
+}
+
 main section.products-show {
 
   .product-detail {
@@ -140,4 +144,12 @@ td.description {
 td.deleteButton {
   text-align: center;
   width: 15%
+}
+
+div.form-group{
+
+}
+
+input {
+  margin: 150 0px;
 }

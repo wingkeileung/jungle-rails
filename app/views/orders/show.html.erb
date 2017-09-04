@@ -12,7 +12,7 @@
         <% totalAmount = 0 %>
         <% @order.line_items.each do |item| %>
         <dl class="dl-horizontal">
-          <dt>Total Price in Cents</dt>
+          <dt>Total Price in $</dt>
           <dd><%= item.total_price_cents * 0.01 %></dd>
           <dt>product Name</dt>
           <dd><%= item.product.name %></dd>

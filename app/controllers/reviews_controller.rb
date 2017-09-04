@@ -17,7 +17,6 @@ before_action :require_login
 def destroy
     review = Review.find(params[:id])
     if review.user_id == current_user.id
-    # puts review.inspect
       review.destroy!
     end
     redirect_to product_path(params[:product_id])
